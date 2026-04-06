@@ -12,7 +12,7 @@ const generateSummary = async (text) => {
     }
 
     const response = await axios.post(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
       {
         contents: [{
           parts: [{
@@ -34,7 +34,7 @@ const generateSummary = async (text) => {
     throw new Error('Invalid response from Gemini API');
   } catch (error) {
     console.error('Error generating summary:', error);
-    throw new Error('Failed to generate summary');
+    throw new Error('Failed to generate AI summary');
   }
 };
 
